@@ -15,11 +15,13 @@
 </div>
 
 <div class="content" role="main">
-
-  <form class="row g-3 align-items-center">
+  <div class="row">
     <div class="col-auto">
       <label for="add-player" class="col-form-label">Pseudo joueur</label>
     </div>
+  </div>
+
+  <form class="row g-3 align-items-center">
     <div class="col-auto">
       <input type="text" id="add-player" class="form-control" [(ngModel)]="playerName" [ngModelOptions]="{standalone: true}">
     </div>
@@ -34,7 +36,7 @@
   <div class="row g-3 align-items-center">
     <div class="col-auto">
       <span *ngFor="let player of players; let i = index">
-        {{ player }} <span [hidden]="i > 0"> vs </span>
+        <span class="fw-bold text-uppercase">{{ player }} </span><span [hidden]="i > 0"> vs </span>
       </span>
     </div>
   </div>
@@ -42,14 +44,14 @@
   <div class="row mt-4">
     <div class="col">
       <button type="button" class="btn btn-outline-primary" (click)="getRandomLetter()" [disabled]="playedLetters.length == 26">
-        Afficher un alphabet
+        Générer lettre
       </button>
       <span [hidden]="playedLetters.length == 0">
         <span type="button" class="btn btn-outline-success mx-3">
           {{ choosedLetter | uppercase }}
         </span>
         <span type="button" class="btn btn-outline-danger" (click)="resetGame()">
-          Réinitialiser
+          Réinit.
         </span>
       </span>
     </div>
@@ -64,7 +66,7 @@
   <div class="row text-center">
     <div class="col">
       <h5 [hidden]="playedLetters.length == 0">Lettres&nbsp;apparues</h5>
-      <table class="table table-bordered border-primary table-stripedp table-sm" [hidden]="playedLetters.length == 0">
+      <table class="table table-striped table-hover table-sm" [hidden]="playedLetters.length == 0">
         <thead>
           <tr>
             <th>#</th>
