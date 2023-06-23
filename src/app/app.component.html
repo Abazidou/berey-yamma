@@ -1,7 +1,7 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <!-- <img width="40" alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" /> -->
+  <img width="40" alt="BEREY YAMMA"
+    src="./../assets/logo1.png" />
   <span>BEREY YAMMA</span>
   <div class="spacer"></div>
   <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/abazidou" title="Twitter">
@@ -17,13 +17,13 @@
 <div class="content" role="main">
   <div class="row">
     <div class="col-auto">
-      <label for="add-player" class="col-form-label">Pseudo joueur</label>
+      <label for="add-player" class="col-form-label">Entrer un pseudo</label>
     </div>
   </div>
 
   <form class="row g-3 align-items-center">
     <div class="col-auto">
-      <input placeholder="nom" type="text" id="add-player" class="form-control" [(ngModel)]="playerName" [ngModelOptions]="{standalone: true}">
+      <input placeholder="pseudo" type="text" id="add-player" class="form-control" [(ngModel)]="playerName" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="col-auto">
       <button type="button" class="btn btn-outline-primary" (click)="addPlayer()">
@@ -34,7 +34,7 @@
 
   <br>
   
-  <div class="row g-3 align-items-center">
+  <div class="row g-3 mt-1 align-items-center">
     <div class="col-auto">
       <span *ngFor="let player of players; let i = index">
         <span class="fw-bold text-uppercase">{{ player }} </span><span [hidden]="i > 0"> vs </span>
@@ -52,7 +52,7 @@
           {{ choosedLetter | uppercase }}
         </span>
         <span type="button" class="btn btn-outline-danger" (click)="resetGame()">
-          Réinit.
+          Réinitialiser
         </span>
       </span>
     </div>
